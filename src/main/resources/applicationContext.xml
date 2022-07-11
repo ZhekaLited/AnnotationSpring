@@ -7,13 +7,32 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id = "MusicBean"
-          class = "org.example.ClasicalMusic">
+       <bean id = "arbuz"
+             class = "org.example.second.arbuz" >
+
+       </bean>
+
+    <bean id = "apple"
+          class="org.example.second.Apple">
+
     </bean>
 
-    <bean  id ="MusicPlayer"
-           class="org.example.MusicPlayer">
-        <constructor-arg ref="MusicBean"/>
+    <bean id = "grusha"
+          class="org.example.second.Grusha">
+
     </bean>
 
-</beans>
+    <bean id = "cooking"
+          class = "org.example.second.Cooking">
+          <property name = "fruitList">
+              <list>
+                  <ref bean="apple"/>
+                  <ref bean="arbuz"/>
+                  <ref bean="grusha"/>
+              </list>
+          </property>
+
+
+
+</bean>
+    </beans>
