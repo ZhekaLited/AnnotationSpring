@@ -1,19 +1,23 @@
 package org.example.second;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
 public class Cooking {
-    private List<Fruit> fruitList = new ArrayList<>();
 
+    private Apple apple;
 
-    public void setFruitList(List<Fruit> fruitList) {
-        this.fruitList = fruitList;
+    private Grusha grusha;
+@Autowired
+    public Cooking(Apple apple, Grusha grusha) {
+        this.apple = apple;
+        this.grusha = grusha;
     }
 
-    public void Cooking() {
-        for (Fruit fruit : fruitList) {
-            System.out.println("My favorite fruit: " + fruit.sort() + fruit.date());
-        }
+    public String EatCooking() {
+    return "All Fruit: " + apple.sort();
+
     }
+
+
 }
